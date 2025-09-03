@@ -3,12 +3,17 @@
 
 GET http://localhost:8080/person
 
+### Get Person by ID
+
+GET http://localhost:8080/person/{6fd6d3f6-1f37-4288-8267-91b0e7725b83}
+
+
 ### Criar Pessoa
 
 POST http://localhost:8080/person
 Content-Type: application/json
 
 {
-    "name": "Pafunso",
-    "email": "Praxedes@api.com"
+    "name": "Bern1",
+    "email": "Bern1@api.com"
 }

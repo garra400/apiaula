@@ -2,12 +2,11 @@ package br.edu.utfpr.apiaula.models;
 
 import java.util.UUID;
 
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -15,16 +14,19 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
+@Entity
+@Table(name = "tb_person")
 
 public class Person {
 
 
+    @Id
+    private UUID id = UUID.randomUUID();
 
-    private UUID id;
+    @Column(name = "name", length = 200, nullable = false)
     private String name;
+
+    @Column(name = "email", length = 200, unique = true)
     private String email;
 
 }
