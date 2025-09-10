@@ -1,0 +1,12 @@
+@URL=http://localhost:8080
+
+@UUID=a03f54c2-df59-44b7-9e4f-6cc079ce75ad
+
+### Criar lembrete
+GET  {{URL}}/person/{{UUID}}/lembretes
+Content-Type: application/json
+
+{
+    "mensagem": "Comprar sabonete",
+    "dataHora": "2025-09-10T18:00:00"
+}
